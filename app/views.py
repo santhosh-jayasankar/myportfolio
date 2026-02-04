@@ -6,6 +6,8 @@ from django.contrib import messages
 # Create your views here.
 
 def home(request):
+    message_sent = False
+
     if request.method == "POST":
         name = request.POST.get("name")
         email = request.POST.get("email")
@@ -19,8 +21,10 @@ def home(request):
                 recipient_list=[settings.EMAIL_HOST_USER],
                 fail_silently=False,
             )
-            messages.success(request, "Message sent successfully!")
+            message_sent = True
         except Exception:
-            messages.error(request, "Message failed. Please try again later.")
+            message_sent = False
 
-    return render(request, "home.html")
+    return render(request, "home.html", {
+        "message_sent": message_sent
+    })
