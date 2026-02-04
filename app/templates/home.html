@@ -284,13 +284,17 @@
     </div>
   </div>
 
-  {% if message_sent %}
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        var modal = new bootstrap.Modal(document.getElementById('successModal'))
-        modal.show()
-      })
-    </script>
+  {% if messages %}
+    {% for message in messages %}
+      {% if message.tags == 'success' %}
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            var modal = new bootstrap.Modal(document.getElementById('successModal'))
+            modal.show()
+          })
+        </script>
+      {% endif %}
+    {% endfor %}
   {% endif %}
   
 {% endblock %}
