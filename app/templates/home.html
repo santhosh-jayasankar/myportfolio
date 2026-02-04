@@ -229,11 +229,11 @@
 
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-6">
-        <form method="POST">
-          {% csrf_token %}
-          <input type="text" name="name" class="form-control mb-3" placeholder="Your name" />
-          <input type="email" name="email" class="form-control mb-3" placeholder="Your email" />
-          <textarea name="message" class="form-control mb-3" rows="4" placeholder="Your message"></textarea>
+        <form method="POST" action="https://formspree.io/f/mdalnoep" id="contactForm">
+          <input type="text" name="name" required class="form-control mb-3" placeholder="Your name" />
+          <input type="email" name="email" required class="form-control mb-3" placeholder="Your email" />
+          <textarea name="message" required class="form-control mb-3" rows="4" placeholder="Your message"></textarea>
+
           <div class="text-center">
             <button type="submit" class="btn btn-dark px-4">Send Message</button>
           </div>
@@ -284,20 +284,38 @@
     </div>
   </div>
 
-  {% if messages %}
-    {% for message in messages %}
-      {% if message.tags == 'success' %}
-        <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            const el = document.getElementById('successModal')
-            if (el) {
-              const modal = new bootstrap.Modal(el)
-              modal.show()
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contactForm')
+      if (!form) return
+    
+      form.addEventListener('submit', function (e) {
+        e.preventDefault()
+    
+        const data = new FormData(form)
+    
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' }
+        })
+          .then((response) => {
+            if (response.ok) {
+              form.reset()
+              const modalEl = document.getElementById('successModal')
+              if (modalEl) {
+                const modal = new bootstrap.Modal(modalEl)
+                modal.show()
+              }
+            } else {
+              alert('Message failed. Please try again.')
             }
           })
-        </script>
-      {% endif %}
-    {% endfor %}
-  {% endif %}
+          .catch(() => {
+            alert('Network error. Please try again later.')
+          })
+      })
+    })
+  </script>
   
 {% endblock %}
