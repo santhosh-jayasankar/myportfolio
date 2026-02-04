@@ -1,0 +1,48 @@
+.icon-circle {
+    width: 45px;
+    height: 45px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.icon-circle:hover {
+    background-color: black;
+    color: white;
+}
+
+#home,
+#projects,
+#resume,
+#contact {
+    scroll-margin-top: 80px;
+}
+
+.contact-links {
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+.contact-links a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
+}
+
+.navbar .nav-link.active {
+    color: #000 !important;
+    font-weight: 600;
+    border-bottom: 2px solid #000;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}

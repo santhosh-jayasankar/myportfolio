@@ -1,0 +1,267 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  Document
+{% endblock %}
+
+{% block content %}
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <a class="navbar-brand mx-2" href="#">Portfolio.</a>
+
+    <button class="navbar-toggler mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="#resume">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <div id="home" class="container min-vh-100 d-flex justify-content-center align-items-center">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-6 px-4">
+        <h2>Hello,</h2>
+        <h1 class="fw-bold">I'm Santhosh.</h1>
+        <h2 class="text-muted">An aspiring full-stack developer.</h2>
+        <p>I design and build responsive web applications while continuously sharpening my full-stack skills.</p>
+
+        <div class="d-flex justify-content-start gap-3">
+          <a href="mailto:santhoshjayasankar748@gmail.com" class="icon-circle"><i class="bi bi-envelope-fill"></i></a>
+          <a href="https://github.com/santhosh-jayasankar" class="icon-circle"><i class="bi bi-github"></i></a>
+          <a href="https://linkedin.com/in/santhosh-jayasankar" class="icon-circle"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6 text-center mt-4 mt-lg-0">
+        <img src="{% static 'images/santhosh-prof.jpg' %}" class="img-fluid rounded-circle" style="width:300px; height:300px; object-fit:cover;" alt="Santhosh profile photo" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="container min-vh-100 d-flex flex-column justify-content-center align-items-center text-center">
+    <h2 class="fw-bold mb-4">About Me</h2>
+
+    <div class="col-12 col-md-10 col-lg-8">
+      <p class="mb-4">My name is Santhosh, an aspiring full-stack developer with a strong interest in building modern, responsive web applications.</p>
+
+      <p class="mb-4">I build responsive UIs using HTML, CSS, JavaScript, and Bootstrap to create clean and user-friendly interfaces, and I manage server-side logic using Python, Django, and MongoDB.</p>
+
+      <p>I am a disciplined learner who enjoys problem-solving, writing clean code, and continuously improving my skills through hands-on practice and projects.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="container min-vh-100 d-flex flex-column justify-content-center">
+    <h2 class="fw-bold text-center mb-5">Skills</h2>
+
+    <div class="row justify-content-center g-4">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="fw-semibold mb-3">Frontend</h5>
+            <span class="badge bg-dark m-1">HTML</span>
+            <span class="badge bg-dark m-1">CSS</span>
+            <span class="badge bg-dark m-1">JavaScript</span>
+            <span class="badge bg-dark m-1">Bootstrap</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="fw-semibold mb-3">Backend</h5>
+            <span class="badge bg-dark m-1">Python</span>
+            <span class="badge bg-dark m-1">Django</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="fw-semibold mb-3">Database</h5>
+            <span class="badge bg-dark m-1">MongoDB</span>
+            <span class="badge bg-dark m-1">SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="container pt-0 pb-3">
+    <h2 class="fw-bold text-center mb-5">Projects</h2>
+
+    <div class="row gap-5 justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="{% static 'images/qwerty.jpg' %}" class="card-img-top" alt="Qwerty AI Tool" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-semibold">Qwerty.com</h5>
+            <p class="card-text text-muted">A web application that provides grammar correction, language translation, and AI Rephraser features.</p>
+
+            <div class="mb-3">
+              <span class="badge bg-dark m-1">HTML</span>
+              <span class="badge bg-dark m-1">CSS</span>
+              <span class="badge bg-dark m-1">JavaScript</span>
+              <span class="badge bg-dark m-1">API</span>
+              <span class="badge bg-dark m-1">Python</span>
+              <span class="badge bg-dark m-1">Django</span>
+              <span class="badge bg-dark m-1">Docker</span>
+            </div>
+
+            <div class="mt-auto d-flex gap-2">
+              <a href="https://qwerty-writing-assistant.onrender.com/" class="btn btn-outline-dark btn-sm">Live Demo</a>
+              <a href="https://github.com/santhosh-jayasankar/qwerty-writing-assistant" class="btn btn-dark btn-sm">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="{% static 'images/portfolio.jpg' %}" class="card-img-top" alt="Qwerty AI Tool" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-semibold">Portfolio</h5>
+            <p class="card-text text-muted">A Personal Portfolio for showcase my skills.</p>
+
+            <div class="mb-3">
+              <span class="badge bg-dark m-1">HTML</span>
+              <span class="badge bg-dark m-1">CSS</span>
+              <span class="badge bg-dark m-1">JavaScript</span>
+              <span class="badge bg-dark m-1">Python</span>
+              <span class="badge bg-dark m-1">Django</span>
+            </div>
+
+            <div class="mt-auto d-flex gap-2">
+              <a href="#home" class="btn btn-outline-dark btn-sm">Live Demo</a>
+              <a href="#" class="btn btn-dark btn-sm">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center my-5 pt-4 border-top">
+        <p class="mb-2 fw-semibold">Open to opportunities</p>
+        <a href="#contact" class="btn btn-outline-dark px-4">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume" class="container pt-0 pb-5">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="text-center mb-4">
+          <h1 class="fw-bold mb-1">Santhosh</h1>
+          <p class="mb-1">Aspiring Full-Stack Developer</p>
+          <p class="contact-links mb-0">
+            <a href="mailto:santhoshjayasankar748@gmail.com">santhoshjayasankar748@gmail.com</a> |
+            <a href="https://github.com/santhosh-jayasankar" target="_blank">GitHub</a> |
+            <a href="https://linkedin.com/in/santhosh-jayasankar" target="_blank">LinkedIn</a>
+          </p>
+        </div>
+
+        <section class="mb-4">
+          <h4 class="section-title">Summary</h4>
+          <p>Aspiring full-stack developer with hands-on experience in building responsive web applications. Strong foundation in front-end development and growing experience in backend technologies. Passionate about clean code, problem-solving, and continuous learning.</p>
+        </section>
+
+        <section class="mb-4">
+          <h4 class="section-title">Technical Skills</h4>
+          <ul class="mb-0">
+            <li>
+              <strong>Frontend:</strong> HTML, CSS, JavaScript, Bootstrap
+            </li>
+            <li>
+              <strong>Backend:</strong> Python, Django
+            </li>
+            <li>
+              <strong>Database:</strong> MongoDB, SQL
+            </li>
+            <li>
+              <strong>Tools:</strong> Git, GitHub, VS Code
+            </li>
+          </ul>
+        </section>
+
+        <section class="mb-4">
+          <h4 class="section-title">Education</h4>
+          <p class="mb-1">
+            <strong>Bachelor of Computer Applications (BCA)</strong>
+          </p>
+          <p class="mb-0">MIET arts & science college, trichy.</p>
+          <p class="text-muted mb-0">2022-2025</p>
+        </section>
+
+        <div class="text-center mt-4">
+          <a href="https://drive.google.com/file/d/1ZRUJ2Zc978RAxuk1qDSasnsV9Bwj5fms/view?usp=drive_link" target="_blank" class="btn btn-dark mb-3">View Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container">
+    <h2 class="fw-bold text-center mb-4">Contact</h2>
+
+    <p class="text-center text-muted mb-5">Interested in working together or have a question? Feel free to reach out.</p>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <form method="POST">
+          {% csrf_token %}
+          <input type="text" name="name" class="form-control mb-3" placeholder="Your name" />
+          <input type="email" name="email" class="form-control mb-3" placeholder="Your email" />
+          <textarea name="message" class="form-control mb-3" rows="4" placeholder="Your message"></textarea>
+          <div class="text-center">
+            <button type="submit" class="btn btn-dark px-4">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer id="footer" class="bg-light mt-5 pt-5 pb-4">
+    <div class="container text-center">
+      <h4 class="fw-bold mb-2">Santhosh</h4>
+      <p class="text-muted mb-3">Aspiring Full-Stack Developer</p>
+
+      <div class="d-flex justify-content-center gap-3 mb-4">
+        <a href="mailto:santhoshjayasankar748@gmail.com" class="icon-circle"><i class="bi bi-envelope-fill"></i></a>
+        <a href="https://github.com/santhosh-jayasankar" target="_blank" class="icon-circle"><i class="bi bi-github"></i></a>
+        <a href="https://linkedin.com/in/santhosh-jayasankar" target="_blank" class="icon-circle"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+      <p class="contact-links mb-3">
+        <a href="mailto:santhoshjayasankar748@gmail.com">santhoshjayasankar748@gmail.com</a>
+      </p>
+
+      <hr class="my-3" />
+
+      <p class="text-muted small mb-0">© 2026 Santhosh. All rights reserved.</p>
+    </div>
+  </footer>
+{% endblock %}
