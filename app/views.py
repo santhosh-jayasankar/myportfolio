@@ -11,14 +11,16 @@ def home(request):
         email = request.POST.get("email")
         message = request.POST.get("message")
 
-        send_mail(
-            subject="New Contact Message - Portfolio",
-            message=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}",
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[settings.EMAIL_HOST_USER],
-            fail_silently=False,
-        )
-
-        messages.success(request, "Message sent successfully!")
+        try:
+            send_mail(
+                subject="New Contact Message - Portfolio",
+                message=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}",
+                from_email=settings.EMAIL_HOST_USER,
+                recipient_list=[settings.EMAIL_HOST_USER],
+                fail_silently=False,
+            )
+            messages.success(request, "Message sent successfully!")
+        except Exception:
+            messages.error(request, "Message failed. Please try again later.")
 
     return render(request, "home.html")
