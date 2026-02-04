@@ -7,6 +7,9 @@ from django.contrib import messages
 
 def home(request):
     if request.method == "POST":
+
+        print("Contact form submitted")
+
         name = request.POST.get("name")
         email = request.POST.get("email")
         message = request.POST.get("message")
@@ -19,8 +22,10 @@ def home(request):
                 recipient_list=[settings.EMAIL_HOST_USER],
                 fail_silently=False,
             )
+            print("✅ Email sent")
             messages.success(request, "Message sent successfully")
         except Exception as e:
+            print("❌ Email error:", e)
             messages.error(request, "Message failed. Please try again later.")
 
         return redirect("/")

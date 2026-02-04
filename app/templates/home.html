@@ -289,8 +289,11 @@
       {% if message.tags == 'success' %}
         <script>
           document.addEventListener('DOMContentLoaded', function () {
-            var modal = new bootstrap.Modal(document.getElementById('successModal'))
-            modal.show()
+            const el = document.getElementById('successModal')
+            if (el) {
+              const modal = new bootstrap.Modal(el)
+              modal.show()
+            }
           })
         </script>
       {% endif %}
